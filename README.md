@@ -32,3 +32,69 @@ Follow these steps to set up your MCS application:
    ```bash
    git clone https://github.com/yourusername/minecraft-server-control.git
    cd minecraft-server-control
+
+2. **Install Dependencies**:
+   ```bash
+   npm install
+
+3. **Run the Application**:
+   ```bash
+   npm start
+
+## Usage Guide
+
+### Starting the Server
+
+1. Open the application.
+2. Click the **Start** button to initiate the server. The server version 1.20.4 will start, and you will see the console output updating in real-time.
+
+### Stopping the Server
+
+1. Click the **Stop** button. The server will gracefully shut down, and the console output will indicate that the server has stopped.
+
+### Managing Plugins
+
+1. Click the **Plugins** button to open the plugins directory.
+2. Add or remove plugins as needed.
+3. Restart the server to apply changes.
+
+### Modifying Server Settings
+
+1. Click the **Settings** button to open the `server.properties` file.
+2. Modify the server properties as needed.
+3. Save the file and restart the server to apply changes.
+
+### Sending Commands
+
+1. Enter your command in the command input box.
+2. Click the **Send** button or press Enter to send the command to the server.
+
+## Technical Details
+
+### File Structure
+
+- `index.html`: Main HTML file for the user interface.
+- `main.js`: Main Electron process file that controls the application lifecycle.
+- `renderer.js`: Renderer process file that handles the front-end logic.
+- `styles.css`: CSS file for styling the application.
+- `package.json`: Node.js file that manages project dependencies and scripts.
+
+### Server Setup
+
+The application automatically downloads the PaperMC server JAR file and sets up the server directory. It also handles the EULA acceptance and manages server processes using Node.js.
+
+### Network Configuration
+
+The application fetches the IPv4 address of your machine and displays it when the server starts, making it easy for others to connect to your server.
+
+## Contributing
+
+We welcome contributions! If you find a bug or have a feature request, please open an issue or submit a pull request. Make sure to follow our [contributing guidelines](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Thank you for using Minecraft Server Control! We hope this tool makes managing your Minecraft server a breeze. Happy gaming!
