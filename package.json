@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "package-win": "electron-packager . MinecraftServer --platform=win32 --arch=x64 --out=dist --overwrite"
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": {
@@ -19,6 +19,45 @@
   },
   "devDependencies": {
     "electron": "^31.1.0",
-    "electron-packager": "^17.1.2"
+    "electron-builder": "^22.11.7"
+  },
+  "build": {
+    "appId": "com.minecraft.server",
+    "productName": "Minecraft Server",
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "main.js",
+      "index.html"
+    ],
+    "extraResources": [
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+      "nsis": {
+        "oneClick": true,
+        "installerIcon": "assets/icon.ico",
+        "uninstallerIcon": "assets/icon.ico",
+        "uninstallDisplayName": "Minecraft Server Uninstaller",
+        "allowToChangeInstallationDirectory": false,
+        "createDesktopShortcut": true,
+        "createStartMenuShortcut": true,
+        "shortcutName": "Minecraft Server"
+    }
   }
 }
