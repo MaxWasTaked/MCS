@@ -1,0 +1,50 @@
+{
+  "name": "minecraft-server",
+  "version": "1.0.0",
+  "description": "A Minecraft server application",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder build --win --linux"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Norbert Baricz",
+    "email": "norbertbaricz608@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "electron": "^31.1.0",
+    "electron-builder": "^22.11.7"
+  },
+  "build": {
+    "appId": "com.minecraft.server",
+    "productName": "Minecraft Server",
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "main.js",
+      "index.html"
+    ],
+    "extraResources": [
+      "assets/**/*"
+    ],
+    "win": {
+      "target": ["nsis", "zip"],
+      "icon": "assets/icon.ico"
+    },
+    "linux": {
+      "target": ["AppImage", "deb", "rpm"],
+      "icon": "assets/icon.png",
+      "maintainer": "Norbert Baricz <norbertbaricz608@gmail.com>"
+    }
+  }
+}

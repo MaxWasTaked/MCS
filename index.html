@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Server Control</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: center;">
+    <h1>Minecraft Server Version 1.20.4</h1>
+    <button id="startStopButton">Start</button>
+    <button class="extraButton" onclick="ipcRenderer.send('open-plugins')">Plugins</button>
+    <button class="extraButton" onclick="ipcRenderer.send('open-server-properties')">Settings</button>
+  </div>
+  <pre id="consoleOutput"></pre>
+  <div id="commandInput">
+    <input type="text" id="commandBox" placeholder="Enter command...">
+    <button id="sendCommandButton">Send</button>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
