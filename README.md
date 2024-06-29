@@ -30,15 +30,18 @@ Follow these steps to set up your MCS application:
 
 1. **Clone the Repository**:
    ```bash
+
    git clone https://github.com/yourusername/minecraft-server-control.git
    cd minecraft-server-control
 
 2. **Install Dependencies**:
    ```bash
+
    npm install
 
 3. **Run the Application**:
    ```bash
+   
    npm start
 
 ## Usage Guide
